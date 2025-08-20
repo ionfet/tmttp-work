@@ -9,7 +9,7 @@
       =========================================================
       Dual-Mode UI Kit (Light + Dark)
       Brand: #F048A8 (magenta), #5CE0E5 (cyan), #282828 (ink)
-      Added: Success #22C55E, Danger #EF4444, Warning #F59E0B
+      Status colors derived from brand palette for cohesion.
       Accessibility: AA/AAA compliant pairings
       =========================================================
     */
@@ -63,29 +63,35 @@
       --sys-secondary-invert: #1C5F5A;
 
       /* On-color text for filled elements (AA/AAA as body text) */
-      --on-primary: #121212;       /* 5.53:1 on #F048A8 */
-      --on-secondary: #121212;     /* 11.82:1 on #5CE0E5 */
-      --on-secondary-invert: #FFFFFF; /* for teal fills if used */
+      --on-primary: #121212;
+      --on-secondary: #121212;
+      --on-secondary-invert: #FFFFFF;
 
-      /* Status colors */
-      --success: #22C55E;
-      --success-hover: #1FB154;
-      --success-active: #19964A;
-      --on-success: #121212;          /* 8.22:1 on #22C55E */
+      /* Status colors - DERIVED FROM BRAND PALETTE */
+      --success: #008B8B;          /* Dark Cyan */
+      --success-hover: #007A7A;
+      --success-active: #006666;
+      --success-bg: #E0FFFF;
+      --success-border: #008B8B;
+      --on-success: #FFFFFF;
 
-      --danger: #EF4444;
-      --danger-hover: #E03535;
-      --danger-active: #C62828;
-      --on-danger: #121212;           /* 4.98:1 on #EF4444 */
+      --danger: #D91A7B;           /* Intense Pink */
+      --danger-hover: #C5176F;
+      --danger-active: #B31464;
+      --danger-bg: #FFE4F1;
+      --danger-border: #D91A7B;
+      --on-danger: #FFFFFF;
 
-      --warning: #F59E0B;
-      --warning-bg: #FEF3C7;
-      --warning-border: #D97706;
-      --on-warning: #121212;          /* 8.72:1 on #F59E0B */
+      --warning: #F77F7F;          /* Coral, from pink */
+      --warning-hover: #F66A6A;
+      --warning-active: #F55555;
+      --warning-bg: #FFF0F0;
+      --warning-border: #D95B5B;
+      --on-warning: #121212;
 
       --info: var(--brand-cyan);
       --info-bg: #E9FBFD;
-      --info-border: #2BC9D0;        /* darker cyan for borders */
+      --info-border: #2BC9D0;
 
       /* Buttons */
       --btn-bg: var(--sys-primary);
@@ -145,20 +151,26 @@
       --on-secondary: #121212;
       --on-secondary-invert: #121212;
 
-      /* Status */
-      --success: #22C55E;
-      --success-hover: #32CF6B;
-      --success-active: #1FB154;
+      /* Status - DERIVED FROM BRAND PALETTE */
+      --success: #66FFCC;          /* Bright Mint */
+      --success-hover: #80FFD6;
+      --success-active: #4DFFC2;
+      --success-bg: #102B2B;
+      --success-border: #66FFCC;
       --on-success: #121212;
 
-      --danger: #EF4444;
-      --danger-hover: #F05A5A;
-      --danger-active: #E03535;
+      --danger: #FF40A1;           /* Hot Pink */
+      --danger-hover: #FF59B3;
+      --danger-active: #FF268F;
+      --danger-bg: #2E101E;
+      --danger-border: #FF40A1;
       --on-danger: #121212;
 
-      --warning: #F59E0B;
-      --warning-bg: #2A1E0A;
-      --warning-border: #F59E0B;
+      --warning: #F89B9B;          /* Light Coral */
+      --warning-hover: #F9B0B0;
+      --warning-active: #F78686;
+      --warning-bg: #2F1A1A;
+      --warning-border: #F89B9B;
       --on-warning: #121212;
 
       --info: var(--brand-cyan);
@@ -334,8 +346,8 @@
     .hint { font-size: 12px; margin-top: 6px; }
 
     /* Validation states */
-    .input.success, .select.success, .textarea.success { border-color: var(--success); box-shadow: 0 0 0 3px rgba(34,197,94,0.25); }
-    .input.error, .select.error, .textarea.error { border-color: var(--danger); box-shadow: 0 0 0 3px rgba(239,68,68,0.25); }
+    .input.success, .select.success, .textarea.success { border-color: var(--success); box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 25%, transparent); }
+    .input.error, .select.error, .textarea.error { border-color: var(--danger); box-shadow: 0 0 0 3px color-mix(in srgb, var(--danger) 25%, transparent); }
     .hint.success { color: var(--success); }
     .hint.error { color: var(--danger); }
 
@@ -352,13 +364,12 @@
     .alert {
       border-radius: var(--radius); padding: 14px; border: 1px solid; display: grid;
       grid-template-columns: 24px 1fr; gap: 12px; align-items: start;
+      color: var(--text); /* Ensure text color is consistent unless overridden */
     }
-    .alert.info { background: var(--info-bg); border-color: var(--info-border); color: var(--text); }
-    .alert.warning { background: var(--warning-bg); border-color: var(--warning-border); color: var(--text); }
-    .alert.success { background: #ECFDF5; border-color: var(--success); color: var(--text); }
-    [data-theme="dark"] .alert.success { background: #0E2317; }
-    .alert.danger { background: #FEE2E2; border-color: var(--danger); color: var(--text); }
-    [data-theme="dark"] .alert.danger { background: #2A1213; }
+    .alert.info { background: var(--info-bg); border-color: var(--info-border); }
+    .alert.warning { background: var(--warning-bg); border-color: var(--warning-border); }
+    .alert.success { background: var(--success-bg); border-color: var(--success-border); }
+    .alert.danger { background: var(--danger-bg); border-color: var(--danger-border); }
     .alert svg { stroke-width: 1.5; fill: none; }
 
     /* Badges */
@@ -512,11 +523,11 @@
             <div class="grid">
               <div class="alert info" role="status" aria-live="polite">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor"/></svg>
-                <div><strong>Info:</strong> Cyan communicates neutral information. Borders use a darker cyan for contrast.</div>
+                <div><strong>Info:</strong> Cyan communicates neutral information.</div>
               </div>
               <div class="alert warning" role="status" aria-live="polite">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L22 20H2L12 3Z" stroke="currentColor"/></svg>
-                <div><strong>Warning:</strong> Amber indicates caution without implying failure.</div>
+                <div><strong>Warning:</strong> Coral indicates caution without implying failure.</div>
               </div>
               <div class="alert success" role="status" aria-live="polite">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor"/></svg>
@@ -658,7 +669,7 @@
           <tr>
             <td>${label}</td>
             <td>
-              <div class="swatch" style="max-width: 100px; margin-bottom: 4px;" role="button" tabindex="0" aria-label="Copy foreground color">
+              <div class="swatch" style="max-width: 100px; margin-bottom: 4px;" role="button" tabindex="0" aria-label="Copy foreground color" data-token-val="${fg}">
                 <div class="tone" style="background:${fg}"></div>
                 <div class="meta">
                   <div class="code">${fgTok}<br/>${fg}</div>
@@ -666,7 +677,7 @@
               </div>
             </td>
             <td>
-              <div class="swatch" style="max-width: 100px;" role="button" tabindex="0" aria-label="Copy background color">
+              <div class="swatch" style="max-width: 100px;" role="button" tabindex="0" aria-label="Copy background color" data-token-val="${bg}">
                 <div class="tone" style="background:${bg}"></div>
                 <div class="meta">
                   <div class="code">${bgTok}<br/>${bg}</div>
@@ -681,7 +692,12 @@
       tbody.innerHTML = rows;
 
       // Re-bind swatch listeners for the newly added swatches in the table
-      document.querySelectorAll('#contrast-table .swatch').forEach(bindSwatch);
+      document.querySelectorAll('#contrast-table .swatch').forEach(el => {
+         el.addEventListener('click', () => copy(el.dataset.tokenVal));
+         el.addEventListener('keydown', (e) => {
+            if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); copy(el.dataset.tokenVal); }
+         });
+      });
     }
 
     // --- Init ---
