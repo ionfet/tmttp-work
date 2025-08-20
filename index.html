@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
@@ -7,10 +8,9 @@
   <style>
     /*
       =========================================================
-      Dual-Mode UI Kit (Light + Dark)
+      TTP UI Kit - Brand-Derived Colors Only
       Brand: #F048A8 (magenta), #5CE0E5 (cyan), #282828 (ink)
-      Status colors derived from brand palette for cohesion.
-      Accessibility: AA/AAA compliant pairings
+      All other colors are derivatives of these three
       =========================================================
     */
 
@@ -42,13 +42,13 @@
     :root[data-theme="light"] {
       /* Backgrounds & text */
       --bg: #FFFFFF;
-      --bg-contrast: #F5F7F8;
-      --bg-blue: #E9FBFD;       /* cyan-tinted panel */
+      --bg-contrast: #F9FDFD;       /* subtle cyan tint */
+      --bg-blue: #E9FBFD;           /* light cyan-tinted panel */
       --card: #FFFFFF;
-      --border: #E4E6EB;
+      --border: #E2F0F1;            /* light cyan-tinted border */
 
-      --text: var(--ink-900);   /* #282828 */
-      --text-muted: #555555;
+      --text: var(--ink-900);       /* #282828 */
+      --text-muted: #525252;        /* lighter ink */
 
       /* System colors */
       --sys-primary: var(--brand-pink);
@@ -59,34 +59,28 @@
       --sys-secondary-hover: #3FD7DD;
       --sys-secondary-active: #2BC9D0;
 
-      /* Secondary-invert = darker teal for link/text on white (AAA) */
-      --sys-secondary-invert: #1C5F5A;
+      /* Secondary-invert = darker cyan for links */
+      --sys-secondary-invert: #2B7B7E;
 
-      /* On-color text for filled elements (AA/AAA as body text) */
+      /* On-color text for filled elements */
       --on-primary: #121212;
       --on-secondary: #121212;
       --on-secondary-invert: #FFFFFF;
 
-      /* Status colors - DERIVED FROM BRAND PALETTE */
-      --success: #008B8B;          /* Dark Cyan */
-      --success-hover: #007A7A;
-      --success-active: #006666;
-      --success-bg: #E0FFFF;
-      --success-border: #008B8B;
-      --on-success: #FFFFFF;
+      /* Status colors - derived from brand colors */
+      --success: #47B8BB;           /* darker cyan for success */
+      --success-hover: #3FA5A8;
+      --success-active: #379295;
+      --on-success: #121212;
 
-      --danger: #D91A7B;           /* Intense Pink */
-      --danger-hover: #C5176F;
-      --danger-active: #B31464;
-      --danger-bg: #FFE4F1;
-      --danger-border: #D91A7B;
-      --on-danger: #FFFFFF;
+      --danger: #D7417A;            /* darker pink for danger */
+      --danger-hover: #C53871;
+      --danger-active: #B32F68;
+      --on-danger: #121212;
 
-      --warning: #F77F7F;          /* Coral, from pink */
-      --warning-hover: #F66A6A;
-      --warning-active: #F55555;
-      --warning-bg: #FFF0F0;
-      --warning-border: #D95B5B;
+      --warning: #CC6BA3;           /* pink-purple mix for warning */
+      --warning-bg: #FDF2F8;       /* very light pink */
+      --warning-border: #CC6BA3;
       --on-warning: #121212;
 
       --info: var(--brand-cyan);
@@ -115,22 +109,22 @@
       --btn-danger-text: var(--on-danger);
 
       /* Links */
-      --link: var(--sys-secondary-invert); /* teal for readability on white */
+      --link: var(--sys-secondary-invert);
       --on-link: #FFFFFF;
 
-      /* Disabled */
-      --disabled-bg: #ECEDEF;
-      --disabled-text: #9AA1A8;
-      --disabled-border: #E1E3E6;
+      /* Disabled - ink-based grays */
+      --disabled-bg: #F5F5F5;       /* very light gray from ink */
+      --disabled-text: #8A8A8A;     /* mid gray from ink */
+      --disabled-border: #E0E0E0;   /* light gray from ink */
     }
 
     /* ===================== DARK THEME ====================== */
     :root[data-theme="dark"] {
       --bg: #121212;
-      --bg-contrast: #1E1E1E;   /* subtle elevated surface */
-      --bg-blue: #0F2A2D;       /* cyan-tinted dark panel */
-      --card: #1A1A1A;
-      --border: #2A2A2A;
+      --bg-contrast: #1A1A1A;       /* slightly lighter ink */
+      --bg-blue: #182A2C;           /* dark cyan-tinted panel */
+      --card: #1E1E1E;              /* lighter ink for cards */
+      --border: #3A3A3A;            /* mid-gray from ink */
 
       --text: #FFFFFF;
       --text-muted: #D0D0D0;
@@ -143,38 +137,32 @@
       --sys-secondary-hover: #79E7EB;
       --sys-secondary-active: #43D4D9;
 
-      /* Lighter cyan accent for icons/lines on dark */
+      /* Lighter cyan accent for dark theme */
       --sys-secondary-invert: #9BE8EC;
 
-      /* On-color text on bright fills stays dark for AAA/AA */
+      /* On-color text stays dark for contrast */
       --on-primary: #121212;
       --on-secondary: #121212;
       --on-secondary-invert: #121212;
 
-      /* Status - DERIVED FROM BRAND PALETTE */
-      --success: #66FFCC;          /* Bright Mint */
-      --success-hover: #80FFD6;
-      --success-active: #4DFFC2;
-      --success-bg: #102B2B;
-      --success-border: #66FFCC;
+      /* Status colors - adjusted for dark theme */
+      --success: #5CC5C8;           /* brighter cyan for success */
+      --success-hover: #70CDD0;
+      --success-active: #4BB5B8;
       --on-success: #121212;
 
-      --danger: #FF40A1;           /* Hot Pink */
-      --danger-hover: #FF59B3;
-      --danger-active: #FF268F;
-      --danger-bg: #2E101E;
-      --danger-border: #FF40A1;
+      --danger: #ED6B9A;            /* lighter pink for danger */
+      --danger-hover: #F07FAA;
+      --danger-active: #E8578A;
       --on-danger: #121212;
 
-      --warning: #F89B9B;          /* Light Coral */
-      --warning-hover: #F9B0B0;
-      --warning-active: #F78686;
-      --warning-bg: #2F1A1A;
-      --warning-border: #F89B9B;
+      --warning: #DB85B7;           /* lighter pink-purple for warning */
+      --warning-bg: #2A1A24;       /* dark pink background */
+      --warning-border: #DB85B7;
       --on-warning: #121212;
 
       --info: var(--brand-cyan);
-      --info-bg: #102A2C;
+      --info-bg: #152A2C;
       --info-border: var(--brand-cyan);
 
       /* Buttons */
@@ -202,10 +190,10 @@
       --link: var(--sys-secondary);
       --on-link: var(--on-secondary);
 
-      /* Disabled */
+      /* Disabled - ink-based grays for dark */
       --disabled-bg: #2A2A2A;
-      --disabled-text: #8B8B8B;
-      --disabled-border: #333333;
+      --disabled-text: #707070;
+      --disabled-border: #404040;
     }
 
     /* ===================== Base styles ===================== */
@@ -346,8 +334,8 @@
     .hint { font-size: 12px; margin-top: 6px; }
 
     /* Validation states */
-    .input.success, .select.success, .textarea.success { border-color: var(--success); box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 25%, transparent); }
-    .input.error, .select.error, .textarea.error { border-color: var(--danger); box-shadow: 0 0 0 3px color-mix(in srgb, var(--danger) 25%, transparent); }
+    .input.success, .select.success, .textarea.success { border-color: var(--success); box-shadow: 0 0 0 3px rgba(71,184,187,0.25); }
+    .input.error, .select.error, .textarea.error { border-color: var(--danger); box-shadow: 0 0 0 3px rgba(215,65,122,0.25); }
     .hint.success { color: var(--success); }
     .hint.error { color: var(--danger); }
 
@@ -364,12 +352,21 @@
     .alert {
       border-radius: var(--radius); padding: 14px; border: 1px solid; display: grid;
       grid-template-columns: 24px 1fr; gap: 12px; align-items: start;
-      color: var(--text); /* Ensure text color is consistent unless overridden */
     }
-    .alert.info { background: var(--info-bg); border-color: var(--info-border); }
-    .alert.warning { background: var(--warning-bg); border-color: var(--warning-border); }
-    .alert.success { background: var(--success-bg); border-color: var(--success-border); }
-    .alert.danger { background: var(--danger-bg); border-color: var(--danger-border); }
+    .alert.info { background: var(--info-bg); border-color: var(--info-border); color: var(--text); }
+    .alert.warning { background: var(--warning-bg); border-color: var(--warning-border); color: var(--text); }
+    .alert.success { 
+      background: #F0FDFD; 
+      border-color: var(--success); 
+      color: var(--text); 
+    }
+    [data-theme="dark"] .alert.success { background: #1A2A2A; }
+    .alert.danger { 
+      background: #FEF7FA; 
+      border-color: var(--danger); 
+      color: var(--text); 
+    }
+    [data-theme="dark"] .alert.danger { background: #2A1A22; }
     .alert svg { stroke-width: 1.5; fill: none; }
 
     /* Badges */
@@ -393,10 +390,10 @@
     th { font-weight: 600; background: var(--bg-contrast); }
 
     .tag { font-size: 10px; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border); display: inline-block; font-weight: 600; text-transform: uppercase; }
-    .tag.pass { border-color: #22c55e; background: #dcfce7; color: #15803d; }
-    [data-theme="dark"] .tag.pass { background: #15803d; color: #dcfce7; }
-    .tag.fail { border-color: #ef4444; background: #fecaca; color: #dc2626; }
-    [data-theme="dark"] .tag.fail { background: #dc2626; color: #fecaca; }
+    .tag.pass { border-color: var(--success); background: #F0FDFD; color: var(--success); }
+    [data-theme="dark"] .tag.pass { background: var(--success); color: #121212; }
+    .tag.fail { border-color: var(--danger); background: #FEF7FA; color: var(--danger); }
+    [data-theme="dark"] .tag.fail { background: var(--danger); color: #121212; }
 
     .kbd { font: 12px ui-monospace, "SF Mono", Monaco, Consolas, monospace; background: var(--bg-contrast); border: 1px solid var(--border); padding: 2px 6px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
 
@@ -429,14 +426,17 @@
         </div>
       </div>
 
-      <h3>System colors</h3>
+      <h3>Base Brand Colors</h3>
+      <div class="grid cols-1" id="swatches-brand"></div>
+
+      <h3 style="margin-top: 20px;">System Colors</h3>
       <div class="grid cols-2" id="swatches-system"></div>
 
       <h3 style="margin-top: 20px;">Backgrounds</h3>
       <div class="grid cols-2" id="swatches-bg"></div>
 
       <p class="muted" style="margin-top: 16px; font-size: 12px;">
-        Tip: click any swatch to copy its color code.
+        Tip: click any swatch to copy its color code. All colors are derived from the three brand colors.
       </p>
     </aside>
 
@@ -453,7 +453,7 @@
             <span class="badge danger">Danger</span>
           </div>
         </div>
-        <p style="margin-top: 12px;">Pro tip: Press <span class="kbd">L</span>/<span class="kbd">D</span> to toggle light/dark.</p>
+        <p style="margin-top: 12px;">Brand-derived color palette. Press <span class="kbd">L</span>/<span class="kbd">D</span> to toggle light/dark.</p>
       </section>
 
       <section class="section" aria-labelledby="components-title">
@@ -462,7 +462,7 @@
           <div class="card">
             <div class="header">
               <strong>Buttons</strong>
-              <small class="muted">Hover/active/focus/disabled/loading</small>
+              <small class="muted">Brand-derived colors only</small>
             </div>
             <div class="grid">
               <button type="button" class="btn primary">Primary action</button>
@@ -518,7 +518,7 @@
           <div class="card">
             <div class="header">
               <strong>Alerts</strong>
-              <small class="muted">Semantic statuses</small>
+              <small class="muted">Brand-derived semantics</small>
             </div>
             <div class="grid">
               <div class="alert info" role="status" aria-live="polite">
@@ -527,15 +527,15 @@
               </div>
               <div class="alert warning" role="status" aria-live="polite">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L22 20H2L12 3Z" stroke="currentColor"/></svg>
-                <div><strong>Warning:</strong> Coral indicates caution without implying failure.</div>
+                <div><strong>Warning:</strong> Pink-purple mix indicates caution.</div>
               </div>
               <div class="alert success" role="status" aria-live="polite">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor"/></svg>
-                <div><strong>Success:</strong> Operation completed successfully.</div>
+                <div><strong>Success:</strong> Darker cyan for positive feedback.</div>
               </div>
               <div class="alert danger" role="status" aria-live="polite">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor"/></svg>
-                <div><strong>Danger:</strong> Something went wrong. Try again.</div>
+                <div><strong>Danger:</strong> Darker pink for errors.</div>
               </div>
             </div>
           </div>
@@ -544,7 +544,7 @@
 
       <section class="section" aria-labelledby="contrast-title">
         <h2 id="contrast-title">Live Contrast Checker</h2>
-        <p class="muted">Computed from current theme tokens.</p>
+        <p class="muted">All brand-derived colors tested for accessibility.</p>
         <div style="overflow-x: auto;">
           <table id="contrast-table" aria-describedby="contrast-title">
             <thead>
@@ -597,19 +597,24 @@
     async function copy(text){ try{ await navigator.clipboard.writeText(text); } catch(e){} }
 
     // --- Swatches ---
+    const brandTokens = [
+      ['--brand-pink','Brand Pink'],
+      ['--brand-cyan','Brand Cyan'],
+      ['--ink-900','Brand Ink']
+    ];
     const sysTokens = [
       ['--sys-primary','System/Primary'],
       ['--sys-secondary','System/Secondary'],
       ['--sys-secondary-invert','System/Secondary-invert'],
-      ['--success','System/Success'],
-      ['--danger','System/Danger'],
-      ['--warning','System/Warning'],
-      ['--info','System/Info']
+      ['--success','Success (cyan-derived)'],
+      ['--danger','Danger (pink-derived)'],
+      ['--warning','Warning (pink-mix)'],
+      ['--info','Info (cyan)']
     ];
     const bgTokens = [
       ['--bg','Background'],
       ['--bg-contrast','Background-contrast'],
-      ['--bg-blue','Blue background']
+      ['--bg-blue','Cyan background']
     ];
 
     function swatchHtml(name, label){
@@ -630,8 +635,13 @@
       });
     }
     function buildSwatches(){
+      const brand = document.getElementById('swatches-brand');
       const sys = document.getElementById('swatches-system');
       const bg  = document.getElementById('swatches-bg');
+      if(brand){
+        brand.innerHTML = brandTokens.map(([t,l]) => swatchHtml(t,l)).join('');
+        brand.querySelectorAll('.swatch').forEach(bindSwatch);
+      }
       if(sys){
         sys.innerHTML = sysTokens.map(([t,l]) => swatchHtml(t,l)).join('');
         sys.querySelectorAll('.swatch').forEach(bindSwatch);
@@ -669,7 +679,7 @@
           <tr>
             <td>${label}</td>
             <td>
-              <div class="swatch" style="max-width: 100px; margin-bottom: 4px;" role="button" tabindex="0" aria-label="Copy foreground color" data-token-val="${fg}">
+              <div class="swatch" style="max-width: 100px; margin-bottom: 4px;" role="button" tabindex="0" aria-label="Copy foreground color">
                 <div class="tone" style="background:${fg}"></div>
                 <div class="meta">
                   <div class="code">${fgTok}<br/>${fg}</div>
@@ -677,7 +687,7 @@
               </div>
             </td>
             <td>
-              <div class="swatch" style="max-width: 100px;" role="button" tabindex="0" aria-label="Copy background color" data-token-val="${bg}">
+              <div class="swatch" style="max-width: 100px;" role="button" tabindex="0" aria-label="Copy background color">
                 <div class="tone" style="background:${bg}"></div>
                 <div class="meta">
                   <div class="code">${bgTok}<br/>${bg}</div>
@@ -692,16 +702,12 @@
       tbody.innerHTML = rows;
 
       // Re-bind swatch listeners for the newly added swatches in the table
-      document.querySelectorAll('#contrast-table .swatch').forEach(el => {
-         el.addEventListener('click', () => copy(el.dataset.tokenVal));
-         el.addEventListener('keydown', (e) => {
-            if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); copy(el.dataset.tokenVal); }
-         });
-      });
+      document.querySelectorAll('#contrast-table .swatch').forEach(bindSwatch);
     }
 
     // --- Init ---
     document.addEventListener('DOMContentLoaded', () => { buildSwatches(); buildContrastTable(); });
   </script>
+
 </body>
 </html>
